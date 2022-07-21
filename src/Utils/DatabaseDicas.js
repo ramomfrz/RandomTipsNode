@@ -6,9 +6,9 @@ class DatabaseMetodos {
     }
 
     static gerarDicas() {
-        let x = Math.random() * Database.Dicas.lenght;
+        let x = Math.random() * Database.Dicas.length;
         x = Math.floor(x);
-        return Database.Dicas.lenght >= 1 ? Database.Dicas[x] : Database.Dicas;
+        return Database.Dicas.length >= 1 ? Database.Dicas[x] : Database.Dicas;
 
     }
 
