@@ -1,16 +1,16 @@
 import DicasModel from "../Models/DicasModel.js"
-import DataBaseDicas from "../Utils/DatabaseDicas.js"
+import DatabaseDicas from "../Utils/DatabaseDicas.js"
 
 class Dicas {
     static rotas(app) {
         app.get("/Dicas", (req, res) => {
-            const criarDicas = DataBaseDicas.gerarDicas();
+            const criarDicas = DatabaseDicas.gerarDicas();
             res.status(200).json(criarDicas);
         })
 
-        app.post("/criar", (req, res) => {
+        app.post("/Criar", (req, res) => {
             const tips = new DicasModel(...Object.values(req.body));
-            const response = DataBaseDicas.adicionarDicas(tips);
+            const response = DatabaseDicas.adicionarDicas(tips);
             res.status(200).json(response);
         })
     }
